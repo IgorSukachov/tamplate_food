@@ -1,0 +1,53 @@
+@mixin clear_default{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+@mixin bgImg($img, $img_size:100%, $background-size:unset, $gallary_img_width:auto, $gallary_img_height:auto){
+  background-image: url($img);
+  background-size: $background-size;
+  max-width: $gallary_img_width;
+  height: $gallary_img_height;
+}
+@mixin nav_a($color){
+  color: $color;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+@mixin imgTEXTimg($display:flex, $justify:space-between, $fontw:500){
+  font-weight: $fontw;
+  display: $display;
+  align-items: center;
+  justify-content: $justify;
+}
+@mixin navMenuStyles($header_nav_width:90%, $navLiMargin:0px 0px, $ulFlex:block, $yellow_text:$yellow_text){
+  nav{
+    margin: auto;
+    width:$header_nav_width;
+  }
+  .ul_header li{
+    display: flex;
+    justify-content: center;
+  }
+  ul{
+    padding: 0px;
+    display: $ulFlex;
+  }
+  .li_elem_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: $navLiMargin;
+    .a_border{
+      margin: auto;
+      width: 0;
+      border-bottom: 2px solid $yellow_text;
+      transition: 0.5s all;
+    }
+  }
+  .ul_header a{
+    @include nav_a($yellow_text);
+  }
+}

@@ -1,0 +1,498 @@
+@import "variables";
+@import "mixins";
+body{
+  @include clear_default;
+}
+img{
+  max-width: 100%;
+}
+.food_header{
+  @include bgImg('../img/header_items.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  .ul_header{
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: inset 0px 0px 3px 4px #2d2d2d;
+  }
+  @include navMenuStyles;
+}
+.food_header_content{
+  width:$header_nav_width;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  .header_info{
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+  }
+  .header_info_elem{
+    margin: 30px 0px;
+  }
+}
+.yellow{
+  color: $yellow_text;
+}
+.about{
+  @include bgImg('../img/aboutBG.png');
+  background-position: bottom;
+  border-top: $border-top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about_main{
+  padding: 75px 10px;
+  width: $header_nav_width;
+  margin: auto;
+  text-align: center;
+  .elem{
+    font-family: 'Montserrat', sans-serif;
+    color: #e2e2e2;
+    width:40%;
+    margin: 35px 0px;
+  }
+  .elem_1{
+    @include imgTEXTimg;
+  }
+  .elem_1 span{
+    font-size: 25px;
+  }
+  .elem:nth-child(2){
+    text-align: left;
+  }
+  .elem:nth-child(3){
+    font-size: 22px;
+  }
+}
+.quality{
+  @include bgImg('../img/qualityBG.png');
+  border-top: $border-top;
+  .quality_main{
+    display: flex;
+    justify-content:center;
+  }
+  .quality_text{
+    color: #e2e2e2;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 0px 50px;
+  }
+  .quality_header{
+    @include imgTEXTimg;
+    width: 90%;
+  }
+  .quality_text_elem{
+    font-family: $main_font;
+    font-size: 25px;
+  }
+  .quality_img{
+    width: 50%;
+    text-align: center;
+  }
+  .quality_img img{
+    width: inherit;
+  }
+  .quality_text_elem .one, .quality_text_elem .two{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .one, .two, .tree{
+    margin: 15px 0px;
+  }
+  .tree{
+    color:$yellow_text;
+  }
+}
+.gallery{
+  @include bgImg('../img/qualityBG.png');
+  width: 100%;
+  padding: 40px 0px;
+  border-top: $border-top;
+
+  .gallery_items_main{
+    width: 900px;
+    height: 505px;
+    margin: auto;
+    display: flex;
+  }
+  .gallery_row_elem{
+    width: 98%;
+    margin: $gallery_row_elem_margin;
+    box-sizing: border-box;
+    transition: .4s all;
+    border:2px solid $yellow_text;
+    &:hover{
+      transform:scale(1.05);
+      box-shadow: 0px 0px 5px 3px #fff;
+    }
+  }
+  .gallery_row{
+    width: 33.333%;
+  }
+  //row 1
+  .g_row_1 .g_elem_1{
+    @include bgImg('../img/4f8d.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:280-$gallery_row_elem_margin);
+  }
+  .g_row_1 .g_elem_2{
+    @include bgImg('../img/4Z9A3978-2.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:220-$gallery_row_elem_margin);
+  }
+  //row 2
+  .g_row_2 .g_elem_1{
+    @include bgImg('../img/images.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:150-$gallery_row_elem_margin);
+  }
+  .g_row_2 .g_elem_2{
+    @include bgImg('../img/eda-mor.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:150-$gallery_row_elem_margin);
+  }
+  .g_row_2 .g_elem_3{
+    @include bgImg('../img/original.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:200-$gallery_row_elem_margin);
+  }
+  //row 3
+  .g_row_3 .g_elem_1{
+    @include bgImg('../img/original-2.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:220-$gallery_row_elem_margin);
+  }
+  .g_row_3 .g_elem_2{
+    @include bgImg('../img/16643.jpg',$background-size:cover, $gallary_img_width:inherit, $gallary_img_height:280-$gallery_row_elem_margin);
+  }
+
+  .gallery_title{
+    color: $yellow_text;
+    font-size: 30px;
+    width: 550px;
+    margin: auto;
+    font-family: $main_font;
+  }
+  .gallery_title .quality_header{
+    @include imgTEXTimg;
+    margin: 20px auto;
+  }
+}
+.booking{
+  @include bgImg('../img/bookingBG.png', $background-size:cover);
+  border-top: $border-top;
+
+  .booking_title{
+    width: 550px;
+    margin: auto;
+  }
+  .booking_title .quality_header{
+    @include imgTEXTimg;
+    font-size: 35px;
+    margin: 20px auto;
+    color: $yellow_text;
+    font-family: $main_font;
+  }
+  .second_booking_title{
+    text-align: center;
+    font-family: $main_font;
+    font-size: 25px;
+    color: #fff;
+    margin: 35px 0px;
+  }
+  .booking_form{
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .booking_inp{
+    background: transparent;
+    border: 2px solid $yellow_text;
+    color: $yellow_text;
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    &:focus-within{
+      background-color: #101042;
+    }
+  }
+    .booking_inp::placeholder{
+    color: $yellow_text;
+  }
+  .booking_inp option{
+    background: #000;
+  }
+  .booking_form label{
+    font-size: 20px;
+    color: #fff;
+    margin: 7px 0px;
+  }
+  .b_form_row{
+    display: flex;
+    justify-content: space-between;
+  }
+  .f_row_item{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 75px;
+  }
+  .b_form_submit{
+    margin: 35px 0px;
+    input{
+      background-color: $yellow_text;
+      font-family: $main_font;
+      font-size: 25px;
+      border:none;
+      border-radius: 6px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: .6s all;
+      &:hover{
+        background-color: #111;
+        color: $yellow_text;
+        box-shadow: 0px 0px 5px 1.3px #ffc901;
+      }
+    }
+  }
+}
+
+.aboveFooter{
+  background-color: #0d0d0c;
+  width: 100%;
+  font-family: $main_font;
+  img{
+    display: block;
+    margin: auto;
+  }
+  .aboveSunImg{
+    position: absolute;
+    top:-70%;
+    right: 0;
+  }
+  .aboveFooterTextBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 2% 18%;
+    height: 370px;
+    background-color: #0d0d0c;
+    text-align: center;
+    position: relative;
+  }
+  .quotes{
+    font-size: 75px;
+    color: $yellow_text;
+  }
+  .aboveText{
+    font-size: 23px;
+    color: #fff;
+  }
+  .abovePerson{
+    font-size: 30px;
+    font-weight: bold;
+    color: $yellow_text;
+  }
+}
+.contact_block{
+  background-color: #111;
+  padding: 35px;
+  font-family: $main_font;
+  border-top: $border-top;
+  .contact_items{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .contact_elem{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .contact_elem_text{
+    color: #fff;
+    font-size: 23px;
+    text-align: center;
+  }
+  .contact_elem_header, .contact_elem_footer_text{
+    color: $yellow_text;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+footer{
+  padding-top: 50px;
+  background-color: #111;
+  font-family: $main_font;
+  .footer_elements{
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  .f_elem_3 a{
+    color: transparent;
+    margin: 0px 10px;
+  }
+  @include navMenuStyles($header_nav_width:100%, $navLiMargin: 0px 40px, $ulFlex:flex,$yellow_text:#fff);
+}
+
+//MEDIA QUERIES
+
+@media screen and (max-width: 780px){
+  .openMe{
+    position:absolute;
+    top:5px;
+    left: 0;
+    z-index: 111;
+    width: 30px;
+    height: 30px;
+    background-color: $yellow_text;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    align-items: center;
+  }
+  .openMe_elem{
+    width: 90%;
+    border-top: 3px solid #000000;
+    border-radius: 25%;
+    box-shadow: 0px 0.5px 4px 0px #505050;
+  }
+  .food_header{
+    padding: 0px;
+    border-top: $border-top;
+    .ul_header{
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      align-items: flex-end;
+      flex-direction: column;
+      padding-right: 5%;
+      background: rgba(0, 0, 0, 0.82);
+    }
+    .header_info{
+      background-color: rgba(0, 0, 0, 0.71);
+      padding: 10px;
+    }
+  }
+  .food_header_content{
+    width: 100%;
+  }
+
+  .about_main{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.71);
+    padding: 10px;
+    box-sizing: border-box;
+    .elem{
+      width: 100%;
+    }
+    .elem_1{
+      font-size: 25px;
+    }
+  }
+
+  .quality .quality_img{
+    width: 55.5%;
+    position: absolute;
+    z-index: 1;
+  }
+  .quality .quality_main{
+    text-align: center;
+  }
+  .quality .quality_text{
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.71);
+  }
+  .quality .quality_header{
+    width: 100%;
+    margin: 20px 0px 50px 0px;
+  }
+  .gallery{
+    .gallery_title{
+      width: 100%;
+      text-align: center;
+    }
+    .gallery_title .quality_header{
+      margin: 20px 5px;
+    }
+    .gallery_items_main{
+      width: 100%;
+    }
+    .gallery_row{
+      width: 32.55%;
+    }
+  }
+  .booking{
+    .booking_form{
+      height: auto;
+    }
+    .booking_title{
+      width: 100%;
+    }
+    .booking_title .quality_header{
+      margin: 0px 3px;
+    }
+    .b_form_row{
+      flex-direction: column;
+    }
+    .f_row_item{
+      margin: 20px 0px;
+    }
+  }
+  .aboveFooter{
+    .aboveFooterTextBlock{
+      padding: 2%;
+    }
+  }
+  .contact_block{
+      padding: 10px;
+    .contact_items{
+      flex-direction: column;
+    }
+    .contact_elem{
+      text-align: center;
+    }
+  }
+
+  footer{
+    border-bottom: $border-top;
+    .footer_elements{
+      height: 180px;
+    }
+    nav{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .quality .quality_img{
+    width: 96.5%;
+  }
+}
+
+
+
